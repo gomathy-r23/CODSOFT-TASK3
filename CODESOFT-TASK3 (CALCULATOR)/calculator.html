@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+       <title>Calculator.com</title>
+    <link rel="stylesheet" href="calculator.css">
+    
+    </head>
+<body>
+    <div class="calculator">
+
+        <input type="text" id="result"  placeholder="0">
+        
+             <button onclick="Cl()">Ac</button>
+             <button onclick="Del()">Del</button>
+
+             <button onclick="solve('*')">*</button>
+             <button onclick="solve('/')">/</button>
+
+             <button onclick="solve('7')">7</button>
+             <button onclick="solve('8')">8</button>
+             <button onclick="solve('9')">9</button>
+             <button onclick="solve('-')">-</button>
+
+             <button onclick="solve('4')">4</button>
+             <button onclick="solve('5')">5</button>
+             <button onclick="solve('6')">6</button>
+             <button onclick="solve('+')">+</button>
+
+             <button onclick="solve('1')">1</button>
+             <button onclick="solve('2')">2</button>
+             <button onclick="solve('3')">3</button>
+             <button onclick="solve('.')">.</button>
+
+             <button onclick="solve('0')">0</button>
+             <button onclick="solve('00')">00</button>
+             <button onclick="display() "  class="equal">=</button>
+       
+    </div>
+
+   <script>         
+let result = document.getElementById("result");
+function solve(num){
+    result.value+=num;
+}
+function display(){
+    try{
+        result.value=eval(result.value);
+    }
+    catch(err){
+        alert("invalid input");
+    }
+}
+    function Cl()
+{
+    result.value ="";
+}
+    function Del()
+{
+    result.value = result.value.slice (0,-1);
+}
+   </script>
+</body>
+</html>
+
+
+
+
+
+
+
